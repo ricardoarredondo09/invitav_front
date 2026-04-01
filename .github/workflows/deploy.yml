@@ -1,0 +1,50 @@
+name: Deploy Invitav React
+
+on:
+  push:
+    branches:
+      - main # Asegúrate de que esta sea tu rama de producción
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          
+      - name: Build
+        run: |
+          npm install
+          npm run build # Esto genera la carpeta 'dist' en la nube de GitHub
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: bundle-react
+          path: dist/
+
+  deploy:
+    needs: build
+    runs-on: self-hosted
+    steps:
+      - name: Download Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: bundle-react
+          path: /tmp/new_dist # Lo bajamos a una carpeta temporal en el servidor
+
+      - name: Update Docker Volume
+        run: |
+          # 1. Limpiar el volumen que usa Docker (en el host)
+          # Ajustado a tu ruta: /data/INVITAV/react/dist
+          sudo rm -rf /data/INVITAV/react/dist/*
+          
+          # 2. Mover los archivos nuevos al volumen
+          sudo cp -r /tmp/new_dist/* /data/INVITAV/react/dist/
+          
+          # 3. Limpiar temporal
+          rm -rf /tmp/new_dist
