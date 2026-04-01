@@ -15,7 +15,7 @@ import {
   Music, 
   Clock, 
   CheckSquare, 
-  Youtube,
+  Video,
   Layers,
   Palette,
   ChevronRight,
@@ -67,7 +67,7 @@ const BLOCK_TYPES = [
   { type: 'rsvp', label: 'Confirmación', icon: <CheckSquare size={20} />, description: 'Formulario de asistencia' },
   { type: 'gallery', label: 'Galería', icon: <ImageIcon size={20} />, description: 'Cuadrícula de fotos' },
   { type: 'gifts', label: 'Regalos', icon: <Gift size={20} />, description: 'Mesa de regalos o cuenta' },
-  { type: 'video', label: 'Video', icon: <Youtube size={20} />, description: 'Enlace de YouTube/Vimeo' },
+  { type: 'video', label: 'Video', icon: <Video size={20} />, description: 'Enlace de YouTube/Vimeo' },
 ];
 
 export default function App() {
