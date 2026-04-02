@@ -4,7 +4,7 @@ import { Menu, Smartphone, Monitor, Eye, Share2 } from 'lucide-react';
 export default function PreviewArea({ children, isMobilePreview, setIsMobilePreview, setSidebarOpen }) {
   return (
     <main className="flex-1 relative flex flex-col bg-slate-950 overflow-hidden w-full">
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('[https://www.transparenttextures.com/patterns/cubes.png](https://www.transparenttextures.com/patterns/cubes.png)')]"></div>
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
       
       <header className="w-full min-h-16 py-3 border-b border-slate-800/50 flex items-center justify-between px-4 md:px-8 bg-slate-900/60 backdrop-blur-xl z-10 gap-2">
         <div className="flex items-center">
