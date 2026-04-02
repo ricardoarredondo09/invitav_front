@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:ital,wght@0,400;0,700;0,900;1,700&display=swap');
+
+/* --- FUENTES --- */
+.font-bangers { font-family: 'Bangers', cursive; }
+.font-nunito { font-family: 'Nunito', sans-serif; }
+
+/* --- FONDOS Y PATRONES --- */
+.polka-dots {
+  background-image: 
+    radial-gradient(#ffffff 15%, transparent 16%),
+    radial-gradient(#ffffff 15%, transparent 16%);
+  background-size: 60px 60px;
+  background-position: 0 0, 30px 30px;
+  opacity: 0.12;
+}
+
+/* --- ELEMENTOS DE MICKEY --- */
+.mickey-ear {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-color: #111111;
+  border-radius: 50%;
+  border: 4px solid #111111;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+  z-index: 0;
+}
+
+.ear-left { top: -20px; left: -25px; }
+.ear-right { top: -20px; right: -25px; }
+
+.photo-wrapper:hover .mickey-ear {
+  transform: scale(1.15);
+}
+
+/* --- BOTONES Y ANIMACIONES --- */
+.btn-pro {
+  transition: all 0.2s;
+  box-shadow: 0 8px 0 rgba(0,0,0,0.3);
+}
+
+.btn-pro:active {
+  transform: translateY(8px);
+  box-shadow: 0 0 0 rgba(0,0,0,0.3);
+}
+
+@keyframes floatMapPin { 
+  0%, 100% { transform: translateY(0); } 
+  50% { transform: translateY(-6px); } 
+}
+
+.animate-float-pin { 
+  animation: floatMapPin 2.5s ease-in-out infinite; 
+}
